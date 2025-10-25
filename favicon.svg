@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="128" height="128" rx="20" ry="20" fill="#000000"/>
+  
+  <!-- Outer border glow -->
+  <rect x="4" y="4" width="120" height="120" rx="18" ry="18" fill="none" stroke="#00ff00" stroke-width="2" opacity="0.4" filter="url(#glow)"/>
+  
+  <!-- Main "S" letter - much larger -->
+  <text x="64" y="106" font-family="Courier New, monospace" font-size="110" fill="#00ff00" filter="url(#glow)" font-weight="bold" text-anchor="middle">S</text>
+  
+  <!-- Scanline effect -->
+  <rect x="0" y="0" width="128" height="128" fill="url(#scanlines)" opacity="0.15"/>
+  
+  <defs>
+    <pattern id="scanlines" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="4" height="2" fill="#00ff00" opacity="0.3"/>
+    </pattern>
+  </defs>
+</svg>
